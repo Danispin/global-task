@@ -1,0 +1,23 @@
+To identify group of anagram from a given input file, ive thought to use a type of map or tree,
+therefore ive used a HashMap<String, List<String>> data structure.
+since anagrams are words with the same letters but just in different order,
+ive decided to sort each word in alphabetical order and store the words in the Hashmap (<sorted, list<anagram_words>>),
+in which the sorted value would function as an id/key, and then the word in the list.
+
+the given code is easily adaptable, since the logic is simple it may be modified to the users need.
+sorting each words takes O(n log n) n - number of characters.
+
+My solution could handle 10 million words on a modern computer, as long as the dataset doesn’t consist of excessively long words.
+
+However, for 100 billion words, we would need to redesign the solution to use a database and process the input in chunks.
+
+This is because storing 100 billion words in memory would exceed the RAM capacity of any standard computer and
+would likely cause the program to crash.
+To avoid this, the processing should be done gradually and incrementally, writing data to persistent storage
+such as a database as it is processed, rather than holding everything in memory.
+
+libraries:
+I've used only standard java libraries.
+
+
+
